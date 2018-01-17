@@ -1,0 +1,51 @@
+AP samples
+~~~~~~~~~~~~~~~~~~~~~~~~~
+# Create Owner
+# curl -X POST -H "Content-Type: application/json" -d '{"username":"rahul","first_name":"Rahul","last_name":"K P","email":"test@test.com"}' http://localhost:8000/create/owner/
+List Owner
+# curl -X GET -H "Content-Type: application/json" http://localhost:8000/list/owner/
+Delete Owner
+# curl -X POST -H "Content-Type: application/json" -d '{"username":"rahul"}' http://localhost:8000/delete/owner/
+Update Owner
+# curl -X POST -H "Content-Type: application/json" -d '{"username":"rahul","password":"blabla","email":"yoyo@yo.com"}' http://localhost:8000/update/owner/
+
+CreateHome assests
+# curl -X POST -H "Content-Type: application/json" -d '{"username":"rahul","name":"blabla","location":"Anakkara","availabilty":"False","rate_per_day":200}' http://localhost:8000/create/homeasset/
+LIst Home assests
+# curl -X GET -H "Content-Type: application/json" http://localhost:8000/list/homeasset/
+Delete Home assests
+# curl -X POST -H "Content-Type: application/json" -d '{"id":1}' http://localhost:8000/delete/homeasset/
+Update Home assets
+# curl -X POST -H "Content-Type: application/json" -d '{"id":1,"name":"lalalla","location":"Australia"}' http://localhost:8000/update/homeasset/
+
+Create Renter
+# curl -X POST -H "Content-Type: application/json" -d '{"username":"rahul123","first_name":"Rahul","last_name":"K P","email":"test@test.com","password":"1234"}' http://localhost:8000/create/renter/
+List Renters 
+# curl -X GET -H "Content-Type: application/json" http://localhost:8000/list/renter/
+Delete Renter
+# curl -X POST -H "Content-Type: application/json" -d '{"username":"rahul123"}' http://localhost:8000/delete/renter/
+Update Renter
+# curl -X POST -H "Content-Type: application/json" -d '{"username":"rahul123","password":"blabla","email":"yoyo@yo.com"}' http://localhost:8000/update/renter/
+
+Book a room
+# curl -X POST -H "Content-Type: application/json" -d '{"username":"rahul123","id":"2","date_of_booking":"2017-12-20"}' http://localhost:8000/bookroom/
+Check room availabilty
+# curl -X POST -H "Content-Type: application/json" -d '{"id":"2","date_to_check":"2017-12-20"}' http://localhost:8000/checkavailable/
+Cancel Room
+# curl -X POST -H "Content-Type: application/json" -d '{"id":"2","username":"rahul123"}' http://localhost:8000/cancelroom/
+
+
+
+Instructions
+~~~~~~~~~~~~~
+1 . Install virtualenv and python 2.7
+2 . Activate virtualenv
+3 . Execute this command
+	$ pip install -r requirements.txt
+4 . Create a database in mysql databse with name 'home_rent'
+5 . Change username and passoword for your databse
+6 . Execute 
+	$ python manage makemigrations app
+	$ python migrate
+
+
